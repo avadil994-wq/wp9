@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
+
+  <!-- Link to manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- iOS meta tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="White/Black Screen" />
+  
+  <!-- iOS icon -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png" sizes="192x192" />
+
+  <title>White/Black Screen</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* remove scroll */
+    }
+    body {
+      background: #fff; /* starting color - white */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.3s;
+      transform: scale(1.4); /* slight zoom */
+    }
+    .start {
+      font-size: 20px;
+      padding: 10px 18px;
+      background: #0b76ff;
+      color: white;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="start">Click to start</div>
+
+  <script>
+    const body = document.body;
+    const startBtn = document.querySelector('.start');
+    let dark = false;
+    let started = false;
+
+    function toggleColor() {
+      if (!started) {
+        startBtn.style.display = 'none';
+        started = true;
+      }
+      dark = !dark;
+      body.style.background = dark ? '#000' : '#fff';
+    }
+
+    body.addEventListener('click', toggleColor);
+  </script>
+</body>
+</html>
