@@ -1,7 +1,7 @@
 self.addEventListener("install", (e) => {
   e.waitUntil(
     caches.open("wb-cache").then((cache) => {
-      return cache.addAll(["/", "/index.html", "/manifest.json", "/icons/icon-192.png"]);
+      return cache.addAll(["/", "/index.html", "/manifest.json", "icon-192.png"]);
     })
   );
 });
