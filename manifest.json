@@ -1,9 +1,8 @@
 {
   "name": "White/Black Screen",
-  "short_name": "W/B Screen",
-  "start_url": "./index.html",
-  "scope": "./",
-  "display": "fullscreen",
+  "short_name": "WB Screen",
+  "start_url": "/",
+  "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "icons": [
