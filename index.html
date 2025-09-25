@@ -62,4 +62,11 @@
     body.addEventListener('click', toggleColor);
   </script>
 </body>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").then(() => {
+      console.log("Service Worker registered");
+    });
+  }
+</script>
 </html>
